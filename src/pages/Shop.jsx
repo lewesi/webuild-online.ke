@@ -1,5 +1,4 @@
-import Hero from "../comps/Hero/Hero"
-
+import Hero from "../comps/hero/Hero"
 const Shop = () => {
   return (
     <div>

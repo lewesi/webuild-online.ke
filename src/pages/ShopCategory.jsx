@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 
 const ShopCategory = ({onAddToCart, cartItems}) => {
-  const [hardwareProducts, setHardwareProducts] = useState([]);
+  //const [hardwareProducts, setHardwareProducts] = useState([]);
   const [moreProducts, setMoreProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
 
@@ -70,22 +70,6 @@ const ShopCategory = ({onAddToCart, cartItems}) => {
     return cartItems.some((item) => item.id === productId);
   };
 
-  const addToCart = (product) => {
-    const productId = product.id;
-    if (isProductInCart(productId)) {
-      // Product already in cart, update quantity
-      const updatedCart = cartItems.map((item) =>
-        item.id === productId ? { ...item, quantity: item.quantity + 1 } : item
-      );
-      onAddToCart(updatedCart);
-    } else {
-      // Product not in cart, add to cart with quantity 1
-      const updatedCart = [...cartItems, { ...product, quantity: 1 }];
-      onAddToCart(updatedCart);
-    }
-
-    notify(product.title);
-  };
 
   return (
     
